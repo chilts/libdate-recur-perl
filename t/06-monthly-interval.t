@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 ## ----------------------------------------------------------------------------
 
-use Test::More tests => 8;
+use Test::More tests => 24;
 
 use Date::Recur;
 use Date::Recur::Rule::MonthlyInterval;

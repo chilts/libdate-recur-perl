@@ -200,6 +200,20 @@ sub exclude_monthly_interval {
     );
 }
 
+sub include_yearly_interval {
+    my ($self, $interval) = @_;
+    $self->include(
+        Date::Recur::Rule::YearlyInterval->new( interval => $interval )
+    );
+}
+
+sub exclude_yearly_interval {
+    my ($self, $interval) = @_;
+    $self->exclude(
+        Date::Recur::Rule::YearlyInterval->new( interval => $interval )
+    );
+}
+
 ## ----------------------------------------------------------------------------
 __PACKAGE__->meta->make_immutable();
 1;
