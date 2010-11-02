@@ -10,6 +10,8 @@ use Date::Simple;
 # all our rules (for the convenience functions)
 use Date::Recur::Rule::OnDaysOfWeek;
 use Date::Recur::Rule::OnDaysOfMonth;
+use Date::Recur::Rule::OnMonthsOfYear;
+use Date::Recur::Rule::MonthlyInterval;
 
 our $VERSION = '0.1';
 
@@ -123,14 +125,14 @@ sub matches {
     foreach my $rule ( @{ $self->rules } ) {
         if ( $rule->{kind} eq INCLUSIVE ) {
             # INCLUSIVE - if we match this, proceed to the next rule
-            next if $rule->{rule}->matches( $date );
+            next if $rule->{rule}->matches( $date, $self );
 
             # didn't match this inclusive date, so return false
             return 0;
         }
         else {
             # EXCLUSIVE - if we match this, then we fail
-            return 0 if $rule->{rule}->matches( $date );
+            return 0 if $rule->{rule}->matches( $date, $self );
 
             # we didn't match the exclusion, so carry on to the next rule
             next;
@@ -181,6 +183,20 @@ sub exclude_months_of_year {
     my ($self, @months) = @_;
     $self->exclude(
         Date::Recur::Rule::OnMonthsOfYear->new( months_of_year => \@months )
+    );
+}
+
+sub include_monthly_interval {
+    my ($self, $interval) = @_;
+    $self->include(
+        Date::Recur::Rule::MonthlyInterval->new( interval => $interval )
+    );
+}
+
+sub exclude_monthly_interval {
+    my ($self, $interval) = @_;
+    $self->exclude(
+        Date::Recur::Rule::MonthlyInterval->new( interval => $interval )
     );
 }
 
