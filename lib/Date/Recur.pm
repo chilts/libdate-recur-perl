@@ -170,6 +170,20 @@ sub exclude_days_of_month {
     );
 }
 
+sub include_months_of_year {
+    my ($self, @months) = @_;
+    $self->include(
+        Date::Recur::Rule::OnMonthsOfYear->new( months_of_year => \@months )
+    );
+}
+
+sub exclude_months_of_year {
+    my ($self, @months) = @_;
+    $self->exclude(
+        Date::Recur::Rule::OnMonthsOfYear->new( months_of_year => \@months )
+    );
+}
+
 ## ----------------------------------------------------------------------------
 __PACKAGE__->meta->make_immutable();
 1;
