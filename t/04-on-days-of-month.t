@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 ## ----------------------------------------------------------------------------
 
-use Test::More tests => 6;
+use Test::More tests => 9;
 
 use Date::Recur;
 use Date::Recur::Rule::OnDaysOfMonth;
@@ -20,6 +20,15 @@ $the_2nd_2->include_days_of_month( 2 );
 
 do_tests( $the_2nd_1 );
 do_tests( $the_2nd_2 );
+
+## do a test for the 20th of every month except December
+my $twentieth = Date::Recur->new();
+$twentieth->include_days_of_month( 20 );
+$twentieth->exclude_months_of_year( Date::Recur::DEC );
+
+ok(  $twentieth->matches( '2010-11-20' ), q{Matches the 20th of November} );
+ok( !$twentieth->matches( '2010-12-20' ), q{Doesn't Match the 20th of December} );
+ok(  $twentieth->matches( '2011-01-20' ), q{Matches the 20th of January} );
 
 ## ----------------------------------------------------------------------------
 
