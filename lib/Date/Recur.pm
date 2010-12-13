@@ -52,7 +52,7 @@ has rules => (
 sub EXCLUSIVE { 0 }
 sub INCLUSIVE { 1 }
 
-# start the week on Sunday
+# start the week on Sunday (which is zero)
 sub SUNDAY { 0 }
 sub MONDAY { 1 }
 sub TUESDAY { 2 }
