@@ -11,7 +11,10 @@ use Date::Simple;
 use Date::Recur::Rule::OnDaysOfWeek;
 use Date::Recur::Rule::OnDaysOfMonth;
 use Date::Recur::Rule::OnMonthsOfYear;
+use Date::Recur::Rule::DailyInterval;
+use Date::Recur::Rule::WeeklyInterval;
 use Date::Recur::Rule::MonthlyInterval;
+use Date::Recur::Rule::YearlyInterval;
 
 our $VERSION = '0.1';
 
@@ -155,6 +158,20 @@ sub exclude_daily_interval {
     my ($self, $interval) = @_;
     $self->exclude(
         Date::Recur::Rule::DailyInterval->new( interval => $interval )
+    );
+}
+
+sub include_weekly_interval {
+    my ($self, $interval) = @_;
+    $self->include(
+        Date::Recur::Rule::WeeklyInterval->new( interval => $interval )
+    );
+}
+
+sub exclude_weekly_interval {
+    my ($self, $interval) = @_;
+    $self->exclude(
+        Date::Recur::Rule::WeeklyInterval->new( interval => $interval )
     );
 }
 
