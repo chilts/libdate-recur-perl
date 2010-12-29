@@ -144,6 +144,20 @@ sub matches {
 ## ----------------------------------------------------------------------------
 # create some convenience methods
 
+sub include_daily_interval {
+    my ($self, $interval) = @_;
+    $self->include(
+        Date::Recur::Rule::DailyInterval->new( interval => $interval )
+    );
+}
+
+sub exclude_daily_interval {
+    my ($self, $interval) = @_;
+    $self->exclude(
+        Date::Recur::Rule::DailyInterval->new( interval => $interval )
+    );
+}
+
 sub include_days_of_week {
     my ($self, @days) = @_;
     $self->include(
