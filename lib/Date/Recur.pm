@@ -16,7 +16,7 @@ use Date::Recur::Rule::WeeklyInterval;
 use Date::Recur::Rule::MonthlyInterval;
 use Date::Recur::Rule::YearlyInterval;
 
-our $VERSION = '0.1';
+our $VERSION = '0.1.1';
 
 ## ----------------------------------------------------------------------------
 

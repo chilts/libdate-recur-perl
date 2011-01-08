@@ -1,7 +1,7 @@
-Name: CGI-Conduit
+Name: Date-Recurd
 Maintainer: Andrew Chilton <chilts@appsattic.com>
-Source: http://search.cpan.org/dist/CGI-Conduit/
-  http://git.appsattic.com/?p=conduit.git
+Source: http://search.cpan.org/dist/Date-Recur/
+  http://git.appsattic.com/?p=libdate-recur-perl.git
 Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
 
 Files: *
