@@ -1,0 +1,16 @@
+libcgi-conduit-perl (0.1) lucid; urgency=low
+
+  * More tests for Sundays
+  * More tests for Days of Month (with an exclusion)
+  * Initial version of Date::Recur with support for OnDaysOfWeek and OnDaysOfMonth
+  * Initial Repository
+  * Do a simple start date, but no end, repeats every day
+  * Do a complex test for the USA elections (with caveat)
+  * Add the YearlyInterval.pm module with amended tests
+  * Add the WeeklyInterval module
+  * Add the DailyInterval module, functionality and tests
+  * Add test for Wellington Perlmongers meeting dates
+  * Add MonthlyInterval.pm with associated tests
+  * Add Date::Recur::OnMonthsOfYear
+
+ -- Andrew Chilton <chilts@appsattic.com>  Sat, 08 Jan 2011 20:16:11 +1300
