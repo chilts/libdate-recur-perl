@@ -1,3 +1,9 @@
+libdate-recur-perl (0.1.2) lucid; urgency=low
+
+  * Start afresh with the version numbers!
+
+ -- Andrew Chilton <chilts@appsattic.com>  Sat, 08 Jan 2011 20:51:36 +1300
+
 libdate-recur-perl (0.1.1) lucid; urgency=low
 
   * Fix silly copy'n'paste things for the packaging
